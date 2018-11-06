@@ -1,0 +1,37 @@
+<!--
+  Generated template for the ListViewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="movePage('write-view')">
+          <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>
+      Todo List
+    </ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of list" >
+    <button ion-item (click)="moreView(item.id)">
+      {{item.title}}
+      <ion-icon name="checkmark-circle" item-end color="secondary" *ngIf="item.suc"></ion-icon>
+    </button>
+    <ion-item-options>
+      <button ion-button color="secondary" (click)="suc(item)">완료</button>
+      <button ion-button color="danger" (click)="delete(item)">삭제</button>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+</ion-content>
